@@ -26,4 +26,14 @@ class ViewControllerTests: XCTestCase {
 
         XCTAssertTrue(vc.targetMethod())
     }
+
+    func test_viewDidLoad_set_bucket() {
+        ABTesting.setupForTesting()
+        ABTesting.setBucketIdForTesting(with: "bucket", to: .test)
+
+        let vc = ViewController()
+        vc.viewDidLoad()
+
+        XCTAssertEqual(vc.view.backgroundColor, .red)
+    }
 }
