@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataStoreForTesting {
+fileprivate struct DataStoreForTesting {
     static var buckets: [String: String] = [:]
     static var wasMethodSwizzling = false
 }
@@ -29,11 +29,10 @@ extension ABTesting {
     }
 
     @objc dynamic class func getBucketIdForTesting(from str: String) -> String {
-        return DataStoreForTesting.buckets[str] ?? "control"
+        return DataStoreForTesting.buckets[str] ?? ""
     }
 
     class func setBucketIdForTesting(with bucketId: String, to e: Experiment) {
         DataStoreForTesting.buckets.updateValue(bucketId, forKey: e.rawValue)
-//        DataStoreForTesting.buckets[e.rawValue] = bucketId
     }
 }
