@@ -17,9 +17,12 @@ class ABTesting {
         return getBucketId(from: experiment.rawValue)
     }
 
-    // "@objc dynamic" must be given in order to replace with tests
-    @objc dynamic class func getBucketId(from str: String) -> String {
-        // do return bucketId from Api
-        return "control"
+    class func getBucketId(from str: String) -> String {
+        if DataStoreForTesting.isTesting {
+            return DataStoreForTesting.buckets[str] ?? ""
+        } else {
+            // do return bucketId from Api
+            return "control"
+        }
     }
 }
