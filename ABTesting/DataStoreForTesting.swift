@@ -11,5 +11,8 @@ import Foundation
 struct DataStoreForTesting {
     static var buckets: [String: String] = [:]
     static var wasMethodSwizzling = false
-    static var isTesting = false
+}
+
+var isTesting: Bool {
+    return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 }

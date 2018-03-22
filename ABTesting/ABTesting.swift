@@ -18,7 +18,7 @@ class ABTesting {
     }
 
     class func getBucketId(from str: String) -> String {
-        if DataStoreForTesting.isTesting {
+        if isTesting {
             return DataStoreForTesting.buckets[str] ?? ""
         } else {
             // do return bucketId from Api

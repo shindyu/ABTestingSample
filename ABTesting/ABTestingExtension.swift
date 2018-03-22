@@ -14,7 +14,6 @@ extension ABTesting {
     }
 
     class func setupForTesting() {
-        DataStoreForTesting.isTesting = true
         DataStoreForTesting.buckets = [:]
     }
 }
