@@ -19,7 +19,7 @@ protocol LocalExperimentable {
 protocol Experimentable {
     init(bucketId: String)
     static var experimentId: String { get }
-    static var myBucket: Self { get }
+//    static var myBucket: Self { get }
 }
 
 extension Experimentable {

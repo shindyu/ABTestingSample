@@ -17,13 +17,38 @@ class ViewController: UIViewController {
 
         test3Method()
 
+        setExperimentableValue(experimentId: ABTesting.Test3.experimentId, bucketId: ABTesting.Test3.myBucket.rawValue)
+
+        setExp(experimentable: ABTesting.Test2.myBucket)
+
         printValues()
+    }
 
 
+    func targetMethod() -> Bool {
+        switch ABTesting.Test1.myBucket {
+        case .bucket1:
+            return true
+        default:
+            return false
+        }
     }
 
     func test3Method() {
         test3 = ABTesting.Test3.myBucket.rawValue
+    }
+
+    func setExperimentableValue(experimentId: String, bucketId: String) {
+        print("setExperimentableValue")
+        print(experimentId)
+        print(bucketId)
+        print("\n")
+    }
+
+    func setExp<T: Experimentable>(experimentable: T) {
+        print("setExp")
+        print(type(of: experimentable).experimentId)
+        print("\n")
     }
 
     func printValues() {
@@ -48,14 +73,5 @@ class ViewController: UIViewController {
 
         //        // objc側から直接experimentId指定しないようにする方が安全
         //        print("ObjcClass.getBucketIdString = \(ObjcClass().getBucketIdString())")
-    }
-
-    func targetMethod() -> Bool {
-        switch ABTesting.Test1.myBucket {
-        case .bucket1:
-            return true
-        default:
-            return false
-        }
     }
 }
