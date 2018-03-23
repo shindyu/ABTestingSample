@@ -20,6 +20,7 @@ protocol Experimentable {
     init(bucketId: String)
     static var experimentId: String { get }
 //    static var myBucket: Self { get }
+    var rawValue: String { get }
 }
 
 extension Experimentable {

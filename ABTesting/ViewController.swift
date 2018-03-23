@@ -21,6 +21,8 @@ class ViewController: UIViewController {
 
         setExp(experimentable: ABTesting.Test2.myBucket)
 
+        setUp(experimentable: ABTesting.Test2.self, bucket: .bucket2)
+
         printValues()
     }
 
@@ -36,6 +38,13 @@ class ViewController: UIViewController {
 
     func test3Method() {
         test3 = ABTesting.Test3.myBucket.rawValue
+    }
+
+    func setUp<T: Experimentable>(experimentable: T.Type, bucket: T) {
+        print("::::")
+        print(experimentable.experimentId)
+        print(bucket.rawValue)
+        print("::::")
     }
 
     func setExperimentableValue(experimentId: String, bucketId: String) {
