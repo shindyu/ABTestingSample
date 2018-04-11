@@ -12,11 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = targetMethod() ? .red : .blue
     }
 
     func targetMethod() -> Bool {
-        switch ABTesting.getBucketId(fromExp: .test) {
+        switch ABTesting.getBucketId() {
         case "bucket":
             return true
         default:

@@ -9,20 +9,19 @@
 import Foundation
 
 class ABTesting {
-    enum Experiment: String {
-        case test
-    }
-
-    class func getBucketId(fromExp experiment: Experiment) -> String {
-        return getBucketId(from: experiment.rawValue)
-    }
-
-    class func getBucketId(from str: String) -> String {
+    class func getBucketId() -> String {
         if isTesting {
-            return DataStoreForTesting.buckets[str] ?? ""
+            return DataStoreForTesting.bucket
         } else {
-            // do return bucketId from Api
             return "control"
         }
     }
+}
+
+struct DataStoreForTesting {
+    static var bucket: String = ""
+}
+
+var isTesting: Bool {
+    return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 }

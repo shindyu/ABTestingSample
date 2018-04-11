@@ -12,28 +12,19 @@ import XCTest
 
 class ViewControllerTests: XCTestCase {
     
-    func test_targetMethod() {
-        let vc = ViewController()
-
-        XCTAssertFalse(vc.targetMethod())
-    }
-
-    func test_targetMethod_set_bucket() {
-        ABTesting.setupForTesting()
-        ABTesting.setBucketIdForTesting(with: "bucket", to: .test)
+    func test_targetMethod_bucket() {
+        DataStoreForTesting.bucket = "bucket"
 
         let vc = ViewController()
 
         XCTAssertTrue(vc.targetMethod())
     }
 
-    func test_viewDidLoad_set_bucket() {
-        ABTesting.setupForTesting()
-        ABTesting.setBucketIdForTesting(with: "bucket", to: .test)
+    func test_targetMethod_control() {
+        DataStoreForTesting.bucket = "control"
 
         let vc = ViewController()
-        vc.viewDidLoad()
 
-        XCTAssertEqual(vc.view.backgroundColor, .red)
+        XCTAssertFalse(vc.targetMethod())
     }
 }

@@ -13,8 +13,6 @@
 		515E2CE71FE2AC7C0068918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515E2CE51FE2AC7C0068918E /* LaunchScreen.storyboard */; };
 		515E2CFD1FE2AC930068918E /* ABTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E2CFC1FE2AC930068918E /* ABTesting.swift */; };
 		515E2D011FE2AD080068918E /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E2D001FE2AD080068918E /* ViewControllerTests.swift */; };
-		515E2D031FE2AEFE0068918E /* ABTestingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E2D021FE2AEFE0068918E /* ABTestingExtension.swift */; };
-		515E2D071FE2C7C80068918E /* DataStoreForTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E2D061FE2C7C80068918E /* DataStoreForTesting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +36,6 @@
 		515E2CF31FE2AC7D0068918E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		515E2CFC1FE2AC930068918E /* ABTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTesting.swift; sourceTree = "<group>"; };
 		515E2D001FE2AD080068918E /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
-		515E2D021FE2AEFE0068918E /* ABTestingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABTestingExtension.swift; sourceTree = "<group>"; };
-		515E2D061FE2C7C80068918E /* DataStoreForTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreForTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +83,6 @@
 				515E2CE51FE2AC7C0068918E /* LaunchScreen.storyboard */,
 				515E2CE81FE2AC7C0068918E /* Info.plist */,
 				515E2CFC1FE2AC930068918E /* ABTesting.swift */,
-				515E2D021FE2AEFE0068918E /* ABTestingExtension.swift */,
-				515E2D061FE2C7C80068918E /* DataStoreForTesting.swift */,
 			);
 			path = ABTesting;
 			sourceTree = "<group>";
@@ -205,9 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				515E2CDF1FE2AC7C0068918E /* ViewController.swift in Sources */,
-				515E2D031FE2AEFE0068918E /* ABTestingExtension.swift in Sources */,
 				515E2CFD1FE2AC930068918E /* ABTesting.swift in Sources */,
-				515E2D071FE2C7C80068918E /* DataStoreForTesting.swift in Sources */,
 				515E2CDD1FE2AC7C0068918E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
